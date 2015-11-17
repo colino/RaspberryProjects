@@ -1,0 +1,22 @@
+# Script per l'uso dei un LED RGB
+
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(18, GPIO.OUT) #RED
+GPIO.output(18, LOW)
+
+GPIO.setup(23, GPIO.OUT) #GREEN
+GPIO.output(23, LOW)
+
+GPIO.setup(24, GPIO.OUT) #BLUE
+GPIO.output(24, LOW)
+
+
+try:
+	while(true):
+		request = raw_input("RGB-->")
+
+except KeyboardInterrupt:
+	GPIO.cleanup()
