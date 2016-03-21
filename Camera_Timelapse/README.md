@@ -36,3 +36,15 @@ for frame in range(FRAMES):
 	time.sleep(int(60*60/FRAMES_PER_HOUR) - (time.time() - start))
 
 ```
+
+install ffmpeg codec library
+```bash
+sudo apt-get install ffmpeg
+```
+
+
+then mount your video with
+
+```bash
+ffmpeg -y -f image2 -i /home/pi/captured_image/frame%03d.jpg -r 24 -vcodec libx264 -profile high -preset slow /home/pi/captured_image/timelapse.mp4
+```
